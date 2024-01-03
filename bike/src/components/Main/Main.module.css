@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+.h1, .h2, .h3, .h4, .h5 {
+    margin: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/back.jpg') center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.header{
+    width: 100%;
+    padding-top: 20px;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: absolute;
+}
+.container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.flex_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/** Nav start **/
+
+.navigate{
+    color: white;
+  }
+.nav_link{
+font-family: Inter;
+font-size: 12px;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+margin: 0 10px;
+}
+
+.burger{
+margin-left: 58px;
+}
+/** Nav end **/
+
+a{
+    color: white;
+    text-decoration: none;
+}
+.logo{
+    width: 90px;
+    height: 50px;
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    float: left;
+    text-align: center;
+}
+.icon_link{
+width: 24px;
+height: 24px;
+    vertical-align: top;
+margin-left: 50px;
+}
+
+.section1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+/**  Title start **/
+
+.title{
+color: white;
+width: 400px;
+height: 400px;
+margin-top: 120px;
+margin-left: 110px;
+}
+.title_h1{
+    font-family: Bebas Neue Cyrillic;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 105px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.title_text{
+font-family: Inter;
+font-size: 18px;
+font-weight: 300;
+line-height: 29px;
+letter-spacing: 0.01em;
+text-align: left;
+}
+.btn_title{
+background: orange;
+}
+
+/**  Title end **/
+
+.btn_title {
+    width: 180px;
+    height: 50px;
+    background: orange;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+/**  Banners start **/
+
+.banners{
+display: grid;
+grid-template-columns: repeat(50, 3fr);
+height: 276px;
+position: absolute;
+margin-top: 1100px;
+width: 100%;
+
+}
+.block1, .block2, .block3 {
+width:500px;
+height: 100px;    
+color: white;
+background: #131313;
+font-family: Inter;
+font-size: 24px;
+font-weight: 500;
+line-height: 38px;
+letter-spacing: 0.01em;
+text-align: left;
+
+}
+
+/**  Banners end **/
+
+/** Section 2 start **/
+
+.section2{
+    width: 1920px;
+height: 806px;
+top: 1439px;
+left: -1px;
+
+}
+
+/** Section 2 end **/
