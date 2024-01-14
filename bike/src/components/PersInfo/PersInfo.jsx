@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import {onAuthStateChanged, signInWithPopup, signOut} from 'firebase/auth';
-import {auth,googleAuthProvider} from '../../firebase';
-import cl from './Auth.module.css';
+import React from 'react';
 import {Link } from "react-router-dom";
+import cl from './PersInfo.module.css';
 import basket from '../../assets/icons/basket.png';
 import search from '../../assets/icons/search.png';
 import user from '../../assets/icons/user.png';
@@ -10,44 +8,13 @@ import like from '../../assets/icons/like.png';
 import burger from '../../assets/icons/burger.png';
 
 
-
-
-
-const AuthDetails = () => {
-  const [authUser, setAuthUser] = useState(null);
-  useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setAuthUser(user); 
-      } else {
-        setAuthUser(null);
-      }
-
-    signInWithPopup(auth, googleAuthProvider)
-      .then(credentials => setAuthUser(credentials.user))
-      .catch((e) => console.log(e));
-   
-        });
-      
-    return () => listen();
-  }, [authUser, auth]);
-
-
-  function userSignUp() {
-    signOut(auth)
-      .then(() => console.log('Success'))
-      .catch((e) => console.log(e));
-  }
- 
-    return (
-    <>
-    <div>
-    <header className={cl.header}>
+const PersInfo = () => {
+return (
+   <>
+   <header className={cl.header}>
   <div className={cl.container}>
      <div className={cl.flex_box}>
 <Link id='main' to = {'/BikeShop'}><div className={cl.logo}> WB </div></Link>
-
-
 
    <div className={cl.navigate}>
 <a className={cl.nav_link}  href='/'>TRADE IN</a>
@@ -69,18 +36,62 @@ const AuthDetails = () => {
 
 </header>
 <main>
-        {authUser ? (
-        <div>
-        <p>{`Signed in as ${authUser.email}`}</p>
-        <button onClick={userSignUp}>Sign Out</button>
-        </div>) 
-        : ( 
-        <>
+  <div className={cl.wrapper}>
+<div className={cl.menuBtn}>
+  <h1 className={cl.title1}>Мой аккаунт</h1>
+  <div className={cl.Btn}>
+<button className={cl.btn_acc}>История заказов</button>
+<button className={cl.btn_acc}>Персональные данные</button>
+<button className={cl.btn_acc}>Смена пороля</button>
+<button className={cl.btn_acc}>Список желаний</button>
+<button className={cl.btn_acc}>Выйти</button>
+  </div>
+</div>
+<div className={cl.persInfo}>
+<h1 className={cl.title2}>Персональные Данные</h1>
+<div className={cl.forma}>
+  <p className={cl.text}>Имя</p>
+  <input type='text' />
+</div>
+<div className={cl.forma}> 
+  <p className={cl.text}>Фамилия</p>
+  <input type="text" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>Отброжаемое имя</p>
+  <input type="text" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>E - mail</p>
+  <input type="email" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>Телефон</p>
+  <input type="number" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>Город</p>
+  <input type="text" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>Улица</p>
+  <input type="text" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>Дом</p>
+  <input type="text" />
+</div>
+<div className={cl.forma}>
+  <p className={cl.text}>Квартира</p>
+  <input type="text" />
+</div>
+<button className={cl.btn_Change}>Изменить</button>
+</div>
 
-        </>
+  </div>
 
-        )}
 </main>
+
 <section className={cl.section11}>
 <div className={cl.wrapper11}>
   <h1 className={cl.title11}>ПОДПИШИТЕСЬ НА НАШИ НОВОСТИ</h1>
@@ -165,10 +176,8 @@ const AuthDetails = () => {
       </div>
      
 </footer>
-    </div>
-    
-    </> 
-    )
+   </>
+  )
 }
 
-export default AuthDetails;
+export default PersInfo
